@@ -3,7 +3,16 @@
   "version": "1.0.0",
   "type": "module",
   "main": "index.js",
+  "exports": {
+    ".": "./index.js",
+    "./lib1": "./lib1/index.js",
+    "./package.json": "./package.json"
+  },
+  "imports": {
+    "#utils/*": "./lib1/*.js"
+  },
   "scripts": {
+    "build": "node ./index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
