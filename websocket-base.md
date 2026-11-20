@@ -1,5 +1,15 @@
 # WebSocket基礎知識整理
 
+## 目錄
+
+1. [websocket與sse主要的差異與優劣](#websocket與sse主要的差異與優劣)
+2. [websocket frame規格説明](#websocket-frame-structure-rfc-6455)
+3. [websocket 擴展](#websocket-extension-negotiation)
+4. [websocket 擴展的 `permessage-deflate`詳細說明](#permessage-deflate-compression-details)
+5. [websocket Fragmentation](#websocket-fragmentation-handling-rfc-645554)
+6. [注意事項](#注意事項)
+7. [常見問題](#常見問題)
+
 ## websocket與sse主要的差異與優劣
 
 WebSocket 與 SSE（Server-Sent Events）的主要差異與優劣比較
@@ -536,7 +546,7 @@ permessage-deflate 透過：
 
 在保持與現有 WebSocket 實作高度相容的同時，有效降低文字與 JSON 類訊息的頻寬消耗。這也是目前幾乎所有主流 WebSocket 函式庫都會實作的壓縮擴展。
 
-## WebSocket Fragmentation Handling (RFC 6455 §5.4)
+## WebSocket Fragmentation Handling (RFC 6455.5.4)
 
 WebSocket 允許把一則 message 拆成多個 frame 傳送，這稱為 fragmentation（訊息分割）。主要目的是：
 
